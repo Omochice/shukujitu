@@ -174,6 +174,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@holiday-jp/holiday_jp':
+        specifier: 2.5.2
+        version: 2.5.2
     devDependencies:
       '@biomejs/biome':
         specifier: 2.6.8
@@ -258,6 +262,9 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@holiday-jp/holiday_jp@2.5.2':
+    resolution: {integrity: sha512-yW5oc0TFgOWVHMdfnnpKz7daDjuGY2yCR/q8hLc3EvDKxZY/5/oCXxXdOahXH8te8hMvWFmKxkfeWsUKdpa1Ug==}
 
   ansi-styles@7.0.0:
     resolution: {integrity: sha512-kKvt3m4uwzqL0wlkPd09CmljPJGOZZ4D0fP65sqFSvPkMRKhNi+74MgIJ5QxE6SxqB4t4KyUFGg8+n5zjo6hew==}
@@ -547,6 +554,8 @@ snapshots:
 
   '@biomejs/cli-win32-x64@2.6.8':
     optional: true
+
+  '@holiday-jp/holiday_jp@2.5.2': {}
 
   ansi-styles@7.0.0: {}
 
