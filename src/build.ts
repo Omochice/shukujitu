@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import holiday_jp from "@holiday-jp/holiday_jp";
 import { toICalendar } from "./ics.ts";
+import { renderIndexPage } from "./page.ts";
 
 const outDir = new URL("../dist/", import.meta.url);
 
@@ -30,3 +31,7 @@ const ics = toICalendar(holidays, {
 
 await mkdir(outDir, { recursive: true });
 await writeFile(new URL("holidays.ics", outDir), ics);
+await writeFile(
+  new URL("index.html", outDir),
+  renderIndexPage({ licenseText }),
+);
