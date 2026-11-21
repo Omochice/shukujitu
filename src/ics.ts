@@ -14,6 +14,8 @@ export interface ICalendarOptions {
   calendarName: string;
   /** Creation time stamped on every event. */
   dtstamp: Date;
+  /** Free-form calendar description, such as attribution of the data. */
+  description?: string;
 }
 
 /**
@@ -92,7 +94,7 @@ const eventLines = ({ date, name }: Holiday, dtstamp: Date): string[] => {
  */
 export function toICalendar(
   holidays: Iterable<Holiday>,
-  { calendarName, dtstamp }: ICalendarOptions,
+  { calendarName, dtstamp, description }: ICalendarOptions,
 ): string {
   const lines = [
     "BEGIN:VCALENDAR",
@@ -101,6 +103,9 @@ export function toICalendar(
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${escapeText(calendarName)}`,
+    ...(description === undefined
+      ? []
+      : [`X-WR-CALDESC:${escapeText(description)}`]),
     "X-WR-TIMEZONE:Asia/Tokyo",
     ...Array.from(holidays, (holiday) => eventLines(holiday, dtstamp)).flat(),
     "END:VCALENDAR",

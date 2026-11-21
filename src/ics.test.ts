@@ -126,3 +126,14 @@ test("folding counts the leading space of continuation lines toward the limit", 
   assert.equal(Buffer.byteLength(lines[1], "utf8"), 75);
   assert.ok(lines[1].startsWith(" "));
 });
+
+test("adds an escaped X-WR-CALDESC after the calendar name when a description is given", () => {
+  const ics = toICalendar([], { ...options, description: "a,b;c" });
+  assert.ok(
+    ics.includes("X-WR-CALNAME:日本の祝日\r\nX-WR-CALDESC:a\\,b\\;c\r\n"),
+  );
+});
+
+test("omits X-WR-CALDESC when no description is given", () => {
+  assert.equal(toICalendar([], options).includes("X-WR-CALDESC"), false);
+});
