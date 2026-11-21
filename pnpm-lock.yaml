@@ -185,6 +185,9 @@ importers:
       '@types/node':
         specifier: 26.6.6
         version: 26.6.6
+      mini-van-plate:
+        specifier: 0.6.4
+        version: 0.6.4
       node:
         specifier: runtime:26.13.0
         version: runtime:26.13.0
@@ -373,6 +376,9 @@ packages:
   memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
     engines: {node: '>= 0.10.0'}
+
+  mini-van-plate@0.6.4:
+    resolution: {integrity: sha512-lgyG8Ck0cGqYKl6rBxCbheDcomoytXJdqd6O6iLlCLjA0ZMYPGT2t6BOdI3OTtc3xixhwTFyQ3klCePrVXUtbg==}
 
   node@runtime:26.13.0:
     resolution:
@@ -681,6 +687,8 @@ snapshots:
   json-parse-even-better-errors@6.0.0: {}
 
   memorystream@0.3.1: {}
+
+  mini-van-plate@0.6.4: {}
 
   node@runtime:26.13.0: {}
 
