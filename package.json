@@ -25,7 +25,7 @@
     "mini-van-plate": "0.6.4",
     "npm-run-all2": "9.1.0",
     "sort-package-json": "4.1.0",
-    "tsrs": "7.1.0-beta.tsrs4"
+    "tsrs": "7.1.0-beta.tsrs5"
   },
   "devEngines": {
     "packageManager": {
